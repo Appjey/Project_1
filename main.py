@@ -38,28 +38,21 @@ def task14(n):
         b = b + math.tan(task14(n-2))
         result = a - b
     return result
+
 def function1(x):
     return math.log(50 * pow(x, 7) + pow(x, 4)) + math.fabs(pow(math.e, x))
-
 
 def function2(x):
     return 70 * pow(x, 5) + pow(x, 8)
 
-
 def function3(x):
     return math.log(math.sin(x) - 59 * pow(x, 6)) - pow(x, 4) - 48
-
 
 def function4(x):
     return 27 * x + math.log(x) - 78
 
-
 def function5(x):
     return pow(pow(x, 7) / 38 + x, 4) + pow(x, 5)
-
-
-def task13(n, m):
-    print(f"{sum1(1, 1, n, m) - 85 * sum2(1, n):.2e}")
 
 def sum1(i, j, n, m):
     result = 0.0
