@@ -66,7 +66,9 @@ def task23(a):
 
 
 # remove None and duplicates
-def remove_d(a=[]):
+def remove_d(a=None):
+    if a is None:
+        a = []
     for i in range(0, len(a)):
         if a[i] == a[i - 1]:
             del a[i - 1]
