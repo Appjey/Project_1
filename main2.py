@@ -1,6 +1,3 @@
-import numpy as np
-import webbrowser
-
 
 def task21(a, b, c, d, e):
     if e == 1966:
