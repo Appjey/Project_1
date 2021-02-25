@@ -1,4 +1,3 @@
-
 def task21(a, b, c, d, e):
     if e == 1966:
         return 12
@@ -45,15 +44,17 @@ def task23(a):
             a[i][1] = b[1]
 
     # Removes all empty cells and duplicates
-    for i in range(0, 3 + 1):
+    for i in range(0, len(a)):
         a[i] = [item for item in a[i] if item is not None]
         a[i] = remove_d(a[i])
 
     # Removes empty sub-array
-    for y in range(len(a)):
-        if not a[y]:
-            del a[y]
-            break
+    while len(a[0]) != len(a):
+        for y in range(len(a)):
+            if not a[y]:
+                del a[y]
+                break
+
     # Transposes the matrix
     transpose = [[a[y][x] for y in range(len(a))] for x in range(len(a[0]))]
 
@@ -80,7 +81,8 @@ print(task21(1973, 'pike', 1993, 1969, 1966))
 print(task23([['0.608|Айдар З. Цодберг', None, None, '25/04/2000', '25/04/2000'],
               [None, None, None, None, None],
               ['0.460|Марат В. Засуфин', None, None, '19/12/1999', '19/12/1999'],
-              ['0.924|Арсен Л. Сикко', None, None, '20/02/2001', '20/02/2001']]))
+              ['0.924|Арсен Л. Сикко', None, None, '20/02/2001', '20/02/2001'],
+              [None, None, None, None, None]]))
 print(task23([['0.751|Артур С. Шувев', None, None, '09/03/2002', '09/03/2002'],
               [None, None, None, None, None],
               ['0.453|Михаил У. Буцук', None, None, '04/07/2002', '04/07/2004'],
