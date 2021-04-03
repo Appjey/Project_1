@@ -40,14 +40,13 @@ def f21(a):
 
 def f22(x):
     a = 0b1 & int(x)
-    b = 0b11111111111 << 1 & int(x)
-    c = 0b1111111111111 << 13 & int(x)
-    d = 0b1111 << 27 & int(x)
+    b = 0b111111111111 << 1 & int(x)
+    c = 0b11111111111111 << 13 & int(x)
+    d = 0b11111 << 27 & int(x)
     b = b << 19
     c = c >> 7
     d = d >> 26
-    a = a
-    return bin(b | c | d | a)
+    return int(hex(b | c | d | a), 16)
 
 
 def f23(a):
@@ -55,7 +54,8 @@ def f23(a):
     for i in range(0, len(a)):
         if a[i][0] is not None:
             b = a[i][0].split('|')
-            a[i].insert(0, str("{:.2f}".format(round(float(b[0]), 2))))  # ПОДВОХ БЫЛ ЗДЕСЬ! Кол-во знаков после 0. важно
+            a[i].insert(0,
+                        str("{:.2f}".format(round(float(b[0]), 2))))  # ПОДВОХ БЫЛ ЗДЕСЬ! Кол-во знаков после 0. важно
             a[i][1] = b[1]
 
     # Removes all empty cells and duplicates
@@ -121,13 +121,13 @@ assert f21(tests.get("f21")[12][1][0]) == tests.get("f21")[12][1][1], "error f21
 assert f21(tests.get("f21")[12][2][0]) == tests.get("f21")[12][2][1], "error f21"
 assert f21(tests.get("f21")[12][3][0]) == tests.get("f21")[12][3][1], "error f21"
 assert f21(tests.get("f21")[12][4][0]) == tests.get("f21")[12][4][1], "error f21"
-"""
+
 assert f22(tests.get("f22")[12][0][0]) == tests.get("f22")[12][0][1], "error f22"
 assert f22(tests.get("f22")[12][1][0]) == tests.get("f22")[12][1][1], "error f22"
 assert f22(tests.get("f22")[12][2][0]) == tests.get("f22")[12][2][1], "error f22"
 assert f22(tests.get("f22")[12][3][0]) == tests.get("f22")[12][3][1], "error f22"
 assert f22(tests.get("f22")[12][4][0]) == tests.get("f22")[12][4][1], "error f22"
-"""
+
 assert f23(tests.get("f23")[12][0][0]) == tests.get("f23")[12][0][1], "error f230"
 assert f23(tests.get("f23")[12][1][0]) == tests.get("f23")[12][1][1], "error f231"
 assert f23(tests.get("f23")[12][2][0]) == tests.get("f23")[12][2][1], "error f232"
