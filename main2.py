@@ -55,7 +55,7 @@ def f23(a):
     for i in range(0, len(a)):
         if a[i][0] is not None:
             b = a[i][0].split('|')
-            a[i].insert(0, str("{:.2f}".format(round(float(b[0]), 2))))
+            a[i].insert(0, str("{:.2f}".format(round(float(b[0]), 2))))  # ПОДВОХ БЫЛ ЗДЕСЬ! Кол-во знаков после 0. важно
             a[i][1] = b[1]
 
     # Removes all empty cells and duplicates
