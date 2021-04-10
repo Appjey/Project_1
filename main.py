@@ -7,8 +7,7 @@ def f11(x, y, z):
     c = math.log(y) - 22 * pow(x, 4) - 53
     d = 5 * pow(x, 4) - y / 32
     e = 27 * pow(x, 5) + math.log(x)
-    result = math.sqrt(a) + math.sqrt(b / c) - d / e
-    return result
+    return math.sqrt(a) + math.sqrt(b / c) - d / e
 
 
 def f12(x):
@@ -31,16 +30,14 @@ def f13(n, m):
 def f14(n):
     a = 0.0
     b = 0.0
-    result = 0
     if n == 0:
-        result = 4
-    if n == 1:
-        result = 6
-    if n > 1:
+        return 4
+    elif n == 1:
+        return 6
+    else:
         a = a + (1 / 76) * f14(n - 1) ** 3
         b = b + math.tan(f14(n - 2))
-        result = a - b
-    return result
+        return a - b
 
 
 def function1(x):
