@@ -1,4 +1,4 @@
-Part One contained 4 tasks from 4 semester
+Part One (main.py) contained 4 tasks from 4 semester
 ---
 
 <br/>![img.png](img/img.png)<br/>
